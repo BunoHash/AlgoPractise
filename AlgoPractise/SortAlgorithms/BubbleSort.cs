@@ -26,10 +26,11 @@ namespace AlgoPractise.SortAlgorithms
         public static void RunSorting()
         {
             var input = IOManager.Input;
-            bool isSorted = true;
+            bool isSorted;
 
             for (int i = 0; i < input.Count; i++)
             {
+                isSorted = true;
                 for (int j = 1; j < input.Count-i; j++)
                 {
                     if (input[j] < input[j -1])

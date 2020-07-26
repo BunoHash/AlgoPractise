@@ -1,4 +1,5 @@
 ﻿using System;
+using AlgoPractise.NewFolder;
 using AlgoPractise.SortAlgorithms;
 
 namespace AlgoPractise
@@ -8,7 +9,8 @@ namespace AlgoPractise
         static void Main(string[] args)
         {
             //InsertionSort.StartInsertionSortProcess();
-            BubbleSort.StartBubbleSortProcess();
+            MargeSort.StartMargeSortProcess();
+            //BubbleSort.StartBubbleSortProcess();
         }
     }
 }

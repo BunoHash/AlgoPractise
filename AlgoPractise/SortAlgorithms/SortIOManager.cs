@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AlgoPractise.SortAlgorithms
 {
-    public static class IOManager
+    public static class SortIOManager
     {
         internal static List<int> Input { get; set; }
         internal static List<int> Output { get; set; }
@@ -24,9 +24,8 @@ namespace AlgoPractise.SortAlgorithms
                 {
                     var number = Convert.ToInt32(readKey);
                     Input.Add(number);
-                    readKey = Console.ReadLine();
                 }
-                
+                readKey = Console.ReadLine();
             }
 
             Console.WriteLine("Unsorted list :");

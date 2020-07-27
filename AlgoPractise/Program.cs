@@ -9,8 +9,9 @@ namespace AlgoPractise
         static void Main(string[] args)
         {
             //InsertionSort.StartInsertionSortProcess();
-            MargeSort.StartMargeSortProcess();
+           // MargeSort.StartMargeSortProcess();
             //BubbleSort.StartBubbleSortProcess();
+            QuickSort.StartQuickSortProcess();
         }
     }
 }

@@ -14,10 +14,10 @@ namespace AlgoPractise.SortAlgorithms
             while (key=="y")
             {
                 
-                IOManager.ProcessInput();
+                SortIOManager.ProcessInput();
                 RunSorting();
                 Console.WriteLine("Final Output: ");
-                IOManager.ShowCurrentOutput();
+                SortIOManager.ShowCurrentOutput();
 
                 Console.WriteLine("Want to sort again? y/n");
                 key = Console.ReadLine();
@@ -27,7 +27,7 @@ namespace AlgoPractise.SortAlgorithms
         }
         public static void RunSorting()
         {
-            var input = IOManager.Input;
+            var input = SortIOManager.Input;
 
             Console.WriteLine("Start sorting : ");
             Console.ReadKey();
@@ -41,7 +41,7 @@ namespace AlgoPractise.SortAlgorithms
                     j--;
                 }
                 input[j+1] = current;
-                IOManager.ShowCurrentOutput();
+                SortIOManager.ShowCurrentOutput();
             }
         }
 

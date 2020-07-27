@@ -15,10 +15,10 @@ namespace AlgoPractise.SortAlgorithms
             while (key == "y")
             {
 
-                IOManager.ProcessInput();
+                SortIOManager.ProcessInput();
                 RunSorting();
                
-                IOManager.ShowFinalOutput();
+                SortIOManager.ShowFinalOutput();
 
                 Console.WriteLine("Want to sort again? y/n");
                 key = Console.ReadLine();
@@ -28,7 +28,7 @@ namespace AlgoPractise.SortAlgorithms
         public static void RunSorting()
         {
 
-            var input = IOManager.Input;
+            var input = SortIOManager.Input;
             var temp = input.ToList();
             DoMargeSort(input, temp, 0 , input.Count-1);
             
@@ -36,7 +36,7 @@ namespace AlgoPractise.SortAlgorithms
 
         private static List<int> DoMargeSort(List<int> numbers, List<int>temp, int leftStart, int rightEnd)
         {
-            IOManager.ShowCurrentOutput();
+            SortIOManager.ShowCurrentOutput();
 
             if (leftStart>=rightEnd)return numbers;
             int middle = (leftStart + rightEnd) / 2;

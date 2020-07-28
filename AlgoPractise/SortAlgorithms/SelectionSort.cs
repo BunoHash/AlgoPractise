@@ -36,13 +36,13 @@ namespace AlgoPractise.SortAlgorithms
             int currentMin;
             int minIndex;
             int prevMinIndex =0;
-            for (int i = 0; i < input.Count; i++)
+            for (int i = 0; i < input.Count-1; i++)
             {
                 currentMin = input[i];
                 minIndex = i;
                 for (int j = i+1; j < input.Count; j++)
                 {
-                    if (currentMin > input[j])
+                    if (input[j] > input[minIndex])
                     {
                         prevMinIndex = minIndex;
                         currentMin = input[j];
@@ -50,7 +50,10 @@ namespace AlgoPractise.SortAlgorithms
                     }
                 }
 
-                SwapItem(prevMinIndex, currentMin);
+                if (minIndex != i)
+                {
+                    SwapItem(i, minIndex);
+                }
             }
         }
         private static void SwapItem(int left, int right)
@@ -63,3 +66,4 @@ namespace AlgoPractise.SortAlgorithms
 
     }
 }
+  

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlgoPractise.Managers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ namespace AlgoPractise.SortAlgorithms
 {
     public static class MargeSort
     {
-        public static string Name = "Marge Sort";
+        private const string Name = "Marge Sort";
         public static void StartMargeSortProcess()
         {
             Console.WriteLine("##" + Name + "## ");
@@ -15,10 +16,10 @@ namespace AlgoPractise.SortAlgorithms
             while (key == "y")
             {
 
-                SortIOManager.ProcessInput();
+                IOManager.TakeNumberListInput();
                 RunSorting();
                
-                SortIOManager.ShowFinalOutput();
+                IOManager.ShowFinalNumberList();
 
                 Console.WriteLine("Want to sort again? y/n");
                 key = Console.ReadLine();
@@ -28,7 +29,7 @@ namespace AlgoPractise.SortAlgorithms
         public static void RunSorting()
         {
 
-            var input = SortIOManager.Input;
+            var input = IOManager.Input;
             var temp = input.ToList();
             DoMargeSort(input, temp, 0 , input.Count-1);
             
@@ -36,7 +37,6 @@ namespace AlgoPractise.SortAlgorithms
 
         private static List<int> DoMargeSort(List<int> numbers, List<int>temp, int leftStart, int rightEnd)
         {
-            SortIOManager.ShowCurrentOutput();
 
             if (leftStart>=rightEnd)return numbers;
             int middle = (leftStart + rightEnd) / 2;
@@ -44,6 +44,9 @@ namespace AlgoPractise.SortAlgorithms
             numbers = DoMargeSort(numbers, temp, middle+1, rightEnd);
 
             numbers = MargeHalves(numbers, temp, leftStart, rightEnd);
+
+            IOManager.ShowCurrentOutput();
+
             return numbers;
 
         }

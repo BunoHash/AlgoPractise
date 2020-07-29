@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlgoPractise.Managers;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +7,7 @@ namespace AlgoPractise.SortAlgorithms
 {
     public static class InsertionSort
     {
-        public static string Name = "Insertion Sort";
+        public const string Name = "Insertion Sort";
         public static void StartInsertionSortProcess()
         {
             Console.WriteLine("##"+ Name + "## ");
@@ -14,10 +15,10 @@ namespace AlgoPractise.SortAlgorithms
             while (key=="y")
             {
                 
-                SortIOManager.ProcessInput();
+                IOManager.TakeNumberListInput();
                 RunSorting();
                 Console.WriteLine("Final Output: ");
-                SortIOManager.ShowCurrentOutput();
+                IOManager.ShowCurrentOutput();
 
                 Console.WriteLine("Want to sort again? y/n");
                 key = Console.ReadLine();
@@ -25,9 +26,9 @@ namespace AlgoPractise.SortAlgorithms
             
 
         }
-        public static void RunSorting()
+        private static void RunSorting()
         {
-            var input = SortIOManager.Input;
+            var input = IOManager.Input;
 
             Console.WriteLine("Start sorting : ");
             Console.ReadKey();
@@ -41,7 +42,7 @@ namespace AlgoPractise.SortAlgorithms
                     j--;
                 }
                 input[j+1] = current;
-                SortIOManager.ShowCurrentOutput();
+                IOManager.ShowCurrentOutput();
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlgoPractise.Managers;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,8 +7,8 @@ namespace AlgoPractise.SortAlgorithms
 {
     public static class SelectionSort
     {
-        public const string Name = "Selectio Sort";
-        public static List<int> input { get; set; }
+        private const string Name = "Selectio Sort";
+        private static List<int> input { get; set; }
 
         public static void StartSelectionSortProcess()
         {
@@ -15,9 +16,9 @@ namespace AlgoPractise.SortAlgorithms
             var key = "y";
             while (key == "y")
             {
-                SortIOManager.ProcessInput();
+                IOManager.TakeNumberListInput();
                 RunSorting();
-                SortIOManager.ShowFinalOutput();
+                IOManager.ShowFinalNumberList();
 
                 Console.WriteLine("Want to sort again? y/n");
                 key = Console.ReadLine();
@@ -26,7 +27,7 @@ namespace AlgoPractise.SortAlgorithms
 
         private static void RunSorting()
         {
-            input = SortIOManager.Input;
+            input = IOManager.Input;
             DoSelectionSort();
 
         }
@@ -54,6 +55,7 @@ namespace AlgoPractise.SortAlgorithms
                 {
                     SwapItem(i, minIndex);
                 }
+                IOManager.ShowCurrentOutput();
             }
         }
         private static void SwapItem(int left, int right)

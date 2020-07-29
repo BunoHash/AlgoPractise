@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlgoPractise.Managers;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +7,7 @@ namespace AlgoPractise.SortAlgorithms
 {
     public static class BubbleSort
     {
-        public static string Name = "Bubble Sort";
+        private const string Name = "Bubble Sort";
 
         public static void StartBubbleSortProcess()
         {
@@ -14,18 +15,18 @@ namespace AlgoPractise.SortAlgorithms
             var key = "y";
             while (key == "y")
             {
-                SortIOManager.ProcessInput();
+                IOManager.TakeNumberListInput();
                 RunSorting();
-                SortIOManager.ShowFinalOutput();
+                IOManager.ShowFinalNumberList();
 
                 Console.WriteLine("Want to sort again? y/n");
                 key = Console.ReadLine();
             }
         }
 
-        public static void RunSorting()
+        private static void RunSorting()
         {
-            var input = SortIOManager.Input;
+            var input = IOManager.Input;
             bool isSorted;
 
             for (int i = 0; i < input.Count; i++)
@@ -40,7 +41,7 @@ namespace AlgoPractise.SortAlgorithms
                     }
                 }
                 if(isSorted) return;
-                SortIOManager.ShowCurrentOutput();
+                IOManager.ShowCurrentOutput();
             }
 
 
@@ -48,7 +49,7 @@ namespace AlgoPractise.SortAlgorithms
 
         private static void Swap(int j)
         {
-            var input = SortIOManager.Input;
+            var input = IOManager.Input;
             var cur = input[j];
             input[j] = input[j - 1];
             input[j - 1] = cur;

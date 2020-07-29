@@ -5,7 +5,7 @@ using AlgoPractise.SortAlgorithms;
 
 namespace AlgoPractise.NewFolder
 {
-    public static class Langu
+    public static class TestManager
     {
         static int n = 10;
         static int m = 20;
@@ -15,12 +15,8 @@ namespace AlgoPractise.NewFolder
         {
             for (int i = 2; i <= 100; i++)
             {
-
                 Console.WriteLine(i*i);
-
-
             }
-
         }
 
         public static void RunSorting()
@@ -41,52 +37,57 @@ namespace AlgoPractise.NewFolder
             numbers = MargeSort(numbers, temp, leftStart, middle);
             numbers = MargeSort(numbers, temp, middle+1, rightEnd);
 
-            return numbers = MargeArray(numbers, temp, leftStart, rightEnd);
+            return numbers; //= MargeArray(numbers, temp, leftStart, rightEnd);
         }
 
-        private static int[] MargeArray(int[] numbers, int[] temp, int leftStart, int rightEnd)
-        {
-            int middle = (leftStart + rightEnd) / 2;
-            int leftEnd = middle;
-            int rightStart = middle + 1;
-            int left = leftStart;
-            int right = rightStart;
-            int index = leftStart;
-            
+        
 
-            while (left<= leftEnd && right<= rightEnd)
+        public static void MargeArray()
+        {
+
+            int[] nums1 = {1, 2, 3, 0, 0, 0};
+            int[] nums2 = {2, 5, 6};
+
+            var leftEnd = 2;
+            var rightEnd = 2;
+            int left =0, right=0, index = 0;
+            int[] temp = new int[nums1.Length];
+
+
+            while (left <= leftEnd && right <= rightEnd)
             {
-                if (numbers[left] < numbers[right])
+                if (nums1[left] < nums2[right])
                 {
-                    temp[index] = numbers[left];
+                    temp[index] = nums1[left];
                     left++;
                 }
                 else
                 {
-                    temp[index] = numbers[right];
+                    temp[index] = nums2[right];
                     right++;
                 }
-
                 index++;
             }
 
             for (int i = left; i <= leftEnd; i++)
             {
-                temp[index] = numbers[i];
-                index++;
+                temp[index++] = nums1[i];
             }
+
             for (int i = right; i <= rightEnd; i++)
             {
-                temp[index] = numbers[i];
-                index++;
+                temp[index++] = nums2[i];
             }
 
-            for (int i = leftStart; i <= rightEnd; i++)
+            nums1 = temp;
+
+            foreach (var num in nums1)
             {
-                numbers[i] = temp[i];
+                Console.Write(num);
+                Console.Write(" ");
             }
 
-            return numbers;
         }
     }
+    
 }

@@ -1,13 +1,14 @@
-﻿using System;
+﻿using AlgoPractise.Managers;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace AlgoPractise.SortAlgorithms
 {
-    public static class QuickSort
+    public class QuickSort
     {
-        public static string Name = "Quick Sort";
-        public static List<int> input { get; set; }
+        private const string Name = "Quick Sort";
+        private static List<int> input { get; set; }
         public static void StartQuickSortProcess()
         {
             Console.WriteLine("##" + Name + "## ");
@@ -15,10 +16,10 @@ namespace AlgoPractise.SortAlgorithms
             while (key == "y")
             {
 
-                SortIOManager.ProcessInput();
+                IOManager.TakeNumberListInput();
                 RunSorting();
 
-                SortIOManager.ShowFinalOutput();
+                IOManager.ShowFinalNumberList();
 
                 Console.WriteLine("Want to sort again? y/n");
                 key = Console.ReadLine();
@@ -29,7 +30,7 @@ namespace AlgoPractise.SortAlgorithms
 
         private static void RunSorting()
         {
-            input = SortIOManager.Input;
+            input = IOManager.Input;
             DoQuickSort(0, input.Count-1);
 
         }
@@ -45,6 +46,7 @@ namespace AlgoPractise.SortAlgorithms
 
             DoQuickSort( left, index-1);
             DoQuickSort( index, right);
+            IOManager.ShowCurrentOutput();
         }
 
         private static int Pertition(int left, int right, int pivot)

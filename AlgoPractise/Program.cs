@@ -10,8 +10,8 @@ namespace AlgoPractise
         {
             //InsertionSort.StartInsertionSortProcess();
            // MargeSort.StartMargeSortProcess();
-            //BubbleSort.StartBubbleSortProcess();
-            QuickSort.StartQuickSortProcess();
+            BubbleSort.StartBubbleSortProcess();
+            //QuickSort.StartQuickSortProcess();
         }
     }
 }

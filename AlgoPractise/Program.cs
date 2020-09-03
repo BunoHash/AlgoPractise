@@ -13,7 +13,7 @@ namespace AlgoPractise
             //BubbleSort.StartBubbleSortProcess();
             //SelectionSort.StartSelectionSortProcess();
             //MargeSort.StartMargeSortProcess();
-            //QuickSort.StartQuickSortProcess();
+            QuickSort.StartQuickSortProcess();
 
             //BinarySearch.StartBiranySearchProcess();
 

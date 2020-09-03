@@ -5,19 +5,21 @@ using AlgoPractise.SortAlgorithms;
 
 namespace AlgoPractise
 {
+
     class Program
     {
         static void Main(string[] args)
-        {
+        {               
+ 
+            //TestManager.MargeArray();
+            
+            //BinarySearch.StartBiranySearchProcess();
             //InsertionSort.StartInsertionSortProcess();
             //BubbleSort.StartBubbleSortProcess();
             //SelectionSort.StartSelectionSortProcess();
             //MargeSort.StartMargeSortProcess();
             QuickSort.StartQuickSortProcess();
 
-            //BinarySearch.StartBiranySearchProcess();
-
-            //TestManager.MargeArray();
         }
     }
 }

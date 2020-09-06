@@ -11,14 +11,23 @@ namespace AlgoPractise
         static void Main(string[] args)
         {               
  
-            //TestManager.MargeArray();
-            
+            //TestManager.RunProcess();
+
+            /// Searching:
             //BinarySearch.StartBiranySearchProcess();
+            
+            /// Sorting: 
+
             //InsertionSort.StartInsertionSortProcess();
             //BubbleSort.StartBubbleSortProcess();
             //SelectionSort.StartSelectionSortProcess();
             //MargeSort.StartMargeSortProcess();
-            QuickSort.StartQuickSortProcess();
+            //QuickSort.StartQuickSortProcess();
+
+
+            ///Pattern:
+
+            BuilderExecuter.Run();
 
         }
     }

@@ -8,8 +8,10 @@ public class Employee
     public string Position;
     public string BloodGroup;
     public DateTime BirthDate ;
+    public string Gender;
 
-    public class Builder : EmployeeBloodGroupBuilder<Builder>
+
+    public class Builder : EmployeeGenderBuilder<Builder>
     {
 
     }
@@ -59,12 +61,23 @@ where SELF : EmployeeBirthDateBuilder<SELF>
     }
 }
 
-public class EmployeeBloodGroupBuilder<SELF> : EmployeeBirthDateBuilder<EmployeeBloodGroupBuilder<SELF>> where SELF : EmployeeBloodGroupBuilder<SELF>
+public class EmployeeBloodGroupBuilder<SELF> : EmployeeBirthDateBuilder<EmployeeBloodGroupBuilder<SELF>> 
+where SELF : EmployeeBloodGroupBuilder<SELF>
 {
 
     public SELF WithBloodGroup(string bloodGroup){
         employee.BloodGroup = bloodGroup;
         return (SELF) this;
+    }
+}
+
+
+public class EmployeeGenderBuilder<SELF> : EmployeeBloodGroupBuilder<EmployeeGenderBuilder<SELF>>
+where SELF : EmployeeGenderBuilder<SELF>
+{
+    public SELF Gender(string gender){
+        employee.Gender = gender;
+        return (SELF)this;
     }
 }
 
@@ -82,6 +95,7 @@ public static class FluidBuidlerExecuter
         .WorkAs("Engineer")
         .BornOn(DateTime.UtcNow)
         .WithBloodGroup("A+")
+        .Gender("Male")
         .Build();
         
 

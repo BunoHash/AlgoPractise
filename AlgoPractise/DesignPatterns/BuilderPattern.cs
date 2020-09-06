@@ -59,10 +59,11 @@ public class HtmlBuilder
         
     }
 
-    public void AddChild(string childName, string childText)
+    public HtmlBuilder AddChild(string childName, string childText)
     {
         var  e  = new HtmlElement(childName, childText);
         element.childs.Add(e);
+        return this;
     }
     public override string ToString()
     {
@@ -76,9 +77,8 @@ public static class BuilderExecuter{
     public static void Run(){
 
         var builder  = new HtmlBuilder("ul");
-        builder.AddChild("li", "khap");
-        builder.AddChild("li", "kun");
-        builder.AddChild("li", "krap");
+        // Fluent Interface : chain multiple calls:
+        builder.AddChild("li", "khap").AddChild("li", "kun").AddChild("li", "krap");
         string output =builder.ToString();
         Console.WriteLine(output);
 

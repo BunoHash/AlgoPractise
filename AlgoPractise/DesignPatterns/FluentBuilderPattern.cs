@@ -2,14 +2,14 @@
 
 using System;
 
-public class Person
+public class Employee
 {
     public string Name;
     public string Position;
     public string BloodGroup;
     public DateTime BirthDate ;
 
-    public class Builder : PersonBloodGroupBuilder<Builder>
+    public class Builder : EmployeeBloodGroupBuilder<Builder>
     {
 
     }
@@ -24,46 +24,46 @@ public class Person
 
 }
 
-public abstract class PersionBuilder
+public abstract class EmployeeBuilder
 {
-    protected Person person = new Person();
-    public Person Build(){
-        return person;
+    protected Employee employee = new Employee();
+    public Employee Build(){
+        return employee;
     }
 }
 
 
-public class PersionInfoBuilder<SELF> : PersionBuilder where SELF : PersionInfoBuilder<SELF>
+public class EmployeeInfoBuilder<SELF> : EmployeeBuilder where SELF : EmployeeInfoBuilder<SELF>
 {
     public SELF Called(string name){
-        this.person.Name = name;
+        this.employee.Name = name;
         return (SELF) this;
     }
 }
 
-public class PersonJobBuilder<SELF> : PersionInfoBuilder<PersonJobBuilder<SELF>> where SELF: PersonJobBuilder<SELF>
+public class EmployeeJobBuilder<SELF> : EmployeeInfoBuilder<EmployeeJobBuilder<SELF>> where SELF: EmployeeJobBuilder<SELF>
 {
     public SELF WorkAs(string positon){
-        person.Position = positon;
+        employee.Position = positon;
         return (SELF)this;
     }
 }
 
 
-public class PersonBirthDateBuilder<SELF> :  PersonJobBuilder<PersonBirthDateBuilder<SELF>> 
-where SELF : PersonBirthDateBuilder<SELF>
+public class EmployeeBirthDateBuilder<SELF> :  EmployeeJobBuilder<EmployeeBirthDateBuilder<SELF>> 
+where SELF : EmployeeBirthDateBuilder<SELF>
 {
     public SELF BornOn(DateTime birthday){
-        person.BirthDate = birthday;
+        employee.BirthDate = birthday;
         return (SELF) this;
     }
 }
 
-public class PersonBloodGroupBuilder<SELF> : PersonBirthDateBuilder<PersonBloodGroupBuilder<SELF>> where SELF : PersonBloodGroupBuilder<SELF>
+public class EmployeeBloodGroupBuilder<SELF> : EmployeeBirthDateBuilder<EmployeeBloodGroupBuilder<SELF>> where SELF : EmployeeBloodGroupBuilder<SELF>
 {
 
     public SELF WithBloodGroup(string bloodGroup){
-        person.BloodGroup = bloodGroup;
+        employee.BloodGroup = bloodGroup;
         return (SELF) this;
     }
 }
@@ -77,7 +77,7 @@ public static class FluidBuidlerExecuter
     
     public static void Run(){
 
-        var person = Person.New
+        var person = Employee.New
         .Called("Sayed")
         .WorkAs("Engineer")
         .BornOn(DateTime.UtcNow)

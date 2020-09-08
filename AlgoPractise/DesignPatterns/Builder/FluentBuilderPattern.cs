@@ -99,7 +99,7 @@ public static class FluidBuidlerExecuter
         .Build();
         
 
-        Console.WriteLine(person);
+        Console.WriteLine(person.ToString());
 
     }
 }

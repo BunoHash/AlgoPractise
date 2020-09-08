@@ -3,6 +3,7 @@ using AlgoPractise.NewFolder;
 using AlgoPractise.Searching;
 using AlgoPractise.SortAlgorithms;
 
+
 namespace AlgoPractise
 {
 
@@ -29,7 +30,8 @@ namespace AlgoPractise
 
             //BuilderExecuter.Run();
             //FluidBuidlerExecuter.Run();
-            ExecuteFacadeBuilder.Run();
+            //ExecuteFacadeBuilder.Run();
+            FirstTestSuite.PersonTest();
 
         }
     }

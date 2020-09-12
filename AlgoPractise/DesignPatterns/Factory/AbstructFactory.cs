@@ -4,25 +4,39 @@ using System.Collections.Generic;
 
 public interface IHotDrink 
 {
+
     void consume();
 
 }
 
 internal class Cofee : IHotDrink
 {
+    private int amount;
     public void consume()
     {
         Console.WriteLine("Nice cofee");
 
     }
+    public override string ToString()
+    {
+        return $"{amount} ml of Cofee ";
+    }
 }
 
 internal class Tea : IHotDrink
 {
+
+    private int amount;
     public void consume()
     {
         Console.WriteLine("I had tea.");
     }
+    public override string ToString()
+    {
+        return $"{amount} ml of Tea ";
+    }
+
+    
 }
 
 public interface IHotDrinkFactory
@@ -37,6 +51,8 @@ public class TeaFactory : IHotDrinkFactory
         Console.WriteLine($"{amount} of Tea consist of milk");
         return new Tea();
     }
+
+    
 }
 
 
@@ -57,12 +73,10 @@ public class HotDrinkMechine
 {
     public enum HotDrinkEnum
     {
-        Tea,Cofee
+        Tea,Cofee, HotChocolate
     }
 
-
     private Dictionary<HotDrinkEnum, IHotDrinkFactory> factories = new Dictionary<HotDrinkEnum, IHotDrinkFactory>();
-
 
     public HotDrinkMechine()
     {
@@ -80,11 +94,9 @@ public class HotDrinkMechine
         return factory.prepare(amount);
 
     }
-
-
-
 }
 
+//problem : amount need to be initilizer while making drink :
 
 public class ExecuteAbsfactory
 {

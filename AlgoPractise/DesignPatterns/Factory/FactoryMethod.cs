@@ -16,6 +16,7 @@ public class Point
         return $"X = {this.x} and y = {this.y}";
     }
 
+    public static Point PointOrigin = new Point(0,0);
 
     public static class Factory{
 

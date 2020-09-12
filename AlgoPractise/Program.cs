@@ -32,7 +32,10 @@ namespace AlgoPractise
             //FluidBuidlerExecuter.Run();
             //ExecuteFacadeBuilder.Run();
             //FirstTestSuite.PersonTest();
-            ExecuteFactory.Run();
+            ExecuteAbsfactory.Run();
+            //ExecuteFactory.Run();
+
+
 
 
 

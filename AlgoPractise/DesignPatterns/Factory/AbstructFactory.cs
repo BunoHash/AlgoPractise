@@ -1,119 +1,126 @@
-
 using System;
 using System.Collections.Generic;
 
-public interface IHotDrink 
+
+public interface IHotDrink
 {
-
-    void consume();
-
-}
-
-internal class Cofee : IHotDrink
-{
-    private int amount;
-    public void consume()
-    {
-        Console.WriteLine("Nice cofee");
-
-    }
-    public override string ToString()
-    {
-        return $"{amount} ml of Cofee ";
-    }
+void Consume();
 }
 
 internal class Tea : IHotDrink
 {
+public void Consume()
+{
+    Console.WriteLine("This tea is nice but I'd prefer it with milk.");
+}
+}
 
-    private int amount;
-    public void consume()
-    {
-        Console.WriteLine("I had tea.");
-    }
-    public override string ToString()
-    {
-        return $"{amount} ml of Tea ";
-    }
-
-    
+internal class Coffee : IHotDrink
+{
+public void Consume()
+{
+    Console.WriteLine("This coffee is delicious!");
+}
 }
 
 public interface IHotDrinkFactory
 {
-    IHotDrink prepare(int amount);
+IHotDrink Prepare(int amount);
 }
 
-public class TeaFactory : IHotDrinkFactory
+internal class TeaFactory : IHotDrinkFactory
 {
-    public IHotDrink prepare(int amount)
-    {
-        Console.WriteLine($"{amount} of Tea consist of milk");
-        return new Tea();
-    }
-
-    
+public IHotDrink Prepare(int amount)
+{
+    Console.WriteLine($"Put in tea bag, boil water, pour {amount} ml, add lemon, enjoy!");
+    return new Tea();
+}
 }
 
-
-public class CofeeFactory : IHotDrinkFactory
+internal class CoffeeFactory : IHotDrinkFactory
 {
-    public IHotDrink prepare(int amount)
-    {
-        Console.WriteLine($"{amount} of cofee grinned in mechine");
-        return new Cofee();
+public IHotDrink Prepare(int amount)
+{
+    Console.WriteLine($"Grind some beans, boil water, pour {amount} ml, add cream and sugar, enjoy!");
+    return new Coffee();
+}
+}
 
+public class HotDrinkMachine
+{
+public enum AvailableDrink // violates open-closed
+{
+    Coffee, Tea
+}
+
+private Dictionary<AvailableDrink, IHotDrinkFactory> factories = 
+    new Dictionary<AvailableDrink, IHotDrinkFactory>();
+
+private List<Tuple<string, IHotDrinkFactory>> namedFactories =
+    new List<Tuple<string, IHotDrinkFactory>>();
+
+public HotDrinkMachine()
+{
+    //foreach (AvailableDrink drink in Enum.GetValues(typeof(AvailableDrink)))
+    //{
+    //  var factory = (IHotDrinkFactory) Activator.CreateInstance(
+    //    Type.GetType("DotNetDesignPatternDemos.Creational.AbstractFactory." + Enum.GetName(typeof(AvailableDrink), drink) + "Factory"));
+    //  factories.Add(drink, factory);
+    //}
+
+    foreach (var t in typeof(HotDrinkMachine).Assembly.GetTypes())
+    {
+    if (typeof(IHotDrinkFactory).IsAssignableFrom(t) && !t.IsInterface)
+    {
+        namedFactories.Add(Tuple.Create(
+        t.Name.Replace("Factory", string.Empty), (IHotDrinkFactory)Activator.CreateInstance(t)));
+    }
     }
 }
 
-
-
-
-public class HotDrinkMechine
+public IHotDrink MakeDrink()
 {
-    public enum HotDrinkEnum
+    Console.WriteLine("Available drinks");
+    for (var index = 0; index < namedFactories.Count; index++)
     {
-        Tea,Cofee, HotChocolate
+    var tuple = namedFactories[index];
+    Console.WriteLine($"{index}: {tuple.Item1}");
     }
 
-    private Dictionary<HotDrinkEnum, IHotDrinkFactory> factories = new Dictionary<HotDrinkEnum, IHotDrinkFactory>();
-
-    public HotDrinkMechine()
+    while (true)
     {
-        foreach (HotDrinkEnum drink in Enum.GetValues(typeof(HotDrinkEnum)))
+    string s;
+    if ((s = Console.ReadLine()) != null
+        && int.TryParse(s, out int i) // c# 7
+        && i >= 0
+        && i < namedFactories.Count)
+    {
+        Console.Write("Specify amount: ");
+        s = Console.ReadLine();
+        if (s != null
+            && int.TryParse(s, out int amount)
+            && amount > 0)
         {
-            var factory = (IHotDrinkFactory)Activator.CreateInstance(
-                Type.GetType(""+Enum.GetName(typeof(HotDrinkEnum), drink) +"Factory")
-            );
-            factories.Add(drink, factory);
+        return namedFactories[i].Item2.Prepare(amount);
         }
     }
-    public IHotDrink MakeDrink(HotDrinkEnum drink, int amount)
-    {
-        var factory = factories[drink];
-        return factory.prepare(amount);
-
+    Console.WriteLine("Incorrect input, try again.");
     }
 }
 
-//problem : amount need to be initilizer while making drink :
+//public IHotDrink MakeDrink(AvailableDrink drink, int amount)
+//{
+//  return factories[drink].Prepare(amount);
+//}
+}
 
 public class ExecuteAbsfactory
 {
-    public static void Run(){
-        var mechine  = new HotDrinkMechine();
-        var tea = mechine.MakeDrink(HotDrinkMechine.HotDrinkEnum.Tea, 200);
-        var cofee = mechine.MakeDrink(HotDrinkMechine.HotDrinkEnum.Cofee, 150);
-
-        Console.WriteLine(tea.ToString());
-        Console.WriteLine(cofee.ToString());
-
+    public static void Run()
+    {
+        var machine = new HotDrinkMachine();
+        IHotDrink drink = machine.MakeDrink();
+        drink.Consume();
     }
-
-
 }
-
-
-
-
 

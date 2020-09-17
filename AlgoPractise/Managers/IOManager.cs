@@ -46,7 +46,6 @@ namespace AlgoPractise.Managers
             var isNumeric = int.TryParse(readKey, out int n);
             if (isNumeric)
             {
-
                 SearchItem = Convert.ToInt32(readKey);
             }
         }

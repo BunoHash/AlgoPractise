@@ -34,7 +34,8 @@ namespace AlgoPractise
             //FirstTestSuite.PersonTest();
             //ExecuteAbsfactory.Run();
             //ExecuteFactory.Run();
-            ExecutePrototype.Run();
+            //ExecutePrototype.Run();
+            ExecuteSingleton.Run();
 
 
 

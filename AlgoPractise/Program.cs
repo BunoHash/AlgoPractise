@@ -2,7 +2,10 @@
 using AlgoPractise.NewFolder;
 using AlgoPractise.Searching;
 using AlgoPractise.SortAlgorithms;
-
+using DP.Creational.Builder;
+using DP.Creational.Factory;
+using DP.Creational.Prototype;
+using DP.Creational.Singleton;
 
 namespace AlgoPractise
 {
@@ -14,28 +17,31 @@ namespace AlgoPractise
  
             //TestManager.RunProcess();
 
-            /// Searching:
+            //// Searching:
             //BinarySearch.StartBiranySearchProcess();
             
-            /// Sorting: 
+            //// Sorting: 
 
-            //InsertionSort.StartInsertionSortProcess();
-            //BubbleSort.StartBubbleSortProcess();
-            //SelectionSort.StartSelectionSortProcess();
-            //MargeSort.StartMargeSortProcess();
-            //QuickSort.StartQuickSortProcess();
+            // InsertionSort.StartInsertionSortProcess();
+            // BubbleSort.StartBubbleSortProcess();
+            // SelectionSort.StartSelectionSortProcess();
+            // MargeSort.StartMargeSortProcess();
+            // QuickSort.StartQuickSortProcess();
 
 
-            ///Pattern:
+            ////Pattern:
 
-            //BuilderExecuter.Run();
-            //FluidBuidlerExecuter.Run();
-            //ExecuteFacadeBuilder.Run();
-            //FirstTestSuite.PersonTest();
-            //ExecuteAbsfactory.Run();
-            //ExecuteFactory.Run();
-            //ExecutePrototype.Run();
-            ExecuteSingleton.Run();
+            // BuilderExecuter.Run();
+            // FluidBuidlerExecuter.Run();
+            // ExecuteFacadeBuilder.Run();
+            // FirstTestSuite.PersonTest();
+            // ExecuteAbsfactory.Run();
+            // ExecuteFactory.Run();
+            // ExecutePrototype.Run();
+            // ExecuteSingleton.Run();
+            // MonoState.Run();
+            //Singleton.Test();
+
 
 
 
@@ -43,4 +49,4 @@ namespace AlgoPractise
 
         }
     }
-}
+ }

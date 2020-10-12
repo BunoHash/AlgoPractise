@@ -13,7 +13,10 @@ namespace AlgoPractise
     class Program
     {
         static void Main(string[] args)
-        {               
+        {   
+
+            TestDelegate del = new TestDelegate();
+            del.Run();            
  
             //TestManager.RunProcess();
 

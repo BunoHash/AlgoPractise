@@ -7,28 +7,28 @@ namespace DP.Creational.Factory
 
     public interface IHotDrink
     {
-    void Consume();
+        void Consume();
     }
 
     internal class Tea : IHotDrink
     {
-    public void Consume()
-    {
-        Console.WriteLine("This tea is nice but I'd prefer it with milk.");
-    }
+        public void Consume()
+        {
+            Console.WriteLine("This tea is nice but I'd prefer it with milk.");
+        }
     }
 
     internal class Coffee : IHotDrink
     {
-    public void Consume()
-    {
-        Console.WriteLine("This coffee is delicious!");
-    }
+        public void Consume()
+        {
+            Console.WriteLine("This coffee is delicious!");
+        }
     }
 
     public interface IHotDrinkFactory
     {
-    IHotDrink Prepare(int amount);
+        IHotDrink Prepare(int amount);
     }
 
     internal class TeaFactory : IHotDrinkFactory

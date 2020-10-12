@@ -79,8 +79,6 @@ namespace DP.Creational.Builder
         }
     }
 
-
-
     public class ExecuteFacadeBuilder {
 
         public static void Run(){

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Text;
 using AlgoPractise.SortAlgorithms;
@@ -7,19 +8,26 @@ namespace AlgoPractise.NewFolder
 {
     public static class TestManager
     {
-        static int n = 10;
-        static int m = 20;
-        static int a = n * m;
-
+      
        
        static string note = "gotonumber";
 
        public static void RunProcess(){
 
-           Console.WriteLine(note);
-       }
-        
 
+
+
+            int[] inputs = { 12, 5, 67, 12, 3, 24, 7};
+            send(inputs);
+
+       }
+
+        private static void send(int[] inputs)
+        {
+            throw new NotImplementedException();
+        }
     }
+
+   
     
 }

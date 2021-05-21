@@ -1,4 +1,5 @@
 ﻿using System;
+using AlgoPractise.DataStructure;
 using AlgoPractise.NewFolder;
 using AlgoPractise.Searching;
 using AlgoPractise.SortAlgorithms;
@@ -13,22 +14,22 @@ namespace AlgoPractise
     class Program
     {
         static void Main(string[] args)
-        {   
+        {
 
-            TestDelegate del = new TestDelegate();
-            del.Run();            
- 
+            // TestDelegate del = new TestDelegate();
+            // del.Run();            
+
             //TestManager.RunProcess();
 
             //// Searching:
             //BinarySearch.StartBiranySearchProcess();
-            
+
             //// Sorting: 
 
             // InsertionSort.StartInsertionSortProcess();
             // BubbleSort.StartBubbleSortProcess();
             // SelectionSort.StartSelectionSortProcess();
-            // MargeSort.StartMargeSortProcess();
+            //MargeSort.StartMargeSortProcess();
             // QuickSort.StartQuickSortProcess();
 
 
@@ -44,6 +45,9 @@ namespace AlgoPractise
             // ExecuteSingleton.Run();
             // MonoState.Run();
             //Singleton.Test();
+
+
+            Stack.StackProcess();
 
         }
     }

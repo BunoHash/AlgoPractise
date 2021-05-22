@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AlgoPractise.DataStructure
 {
-    public class Stack
+    public class ParanthesisStack
     {
 
         public static void StackProcess()

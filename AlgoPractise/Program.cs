@@ -44,10 +44,10 @@ namespace AlgoPractise
             // ExecutePrototype.Run();
             // ExecuteSingleton.Run();
             // MonoState.Run();
-            //Singleton.Test();
+            // Singleton.Test();
 
 
-            Stack.StackProcess();
+            ParanthesisStack.StackProcess();
 
         }
     }

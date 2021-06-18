@@ -1,4 +1,5 @@
 ﻿using System;
+using AlgoPractise_Design_Principles;
 using AlgoPractise.DataStructure;
 using AlgoPractise.NewFolder;
 using AlgoPractise.Searching;
@@ -47,7 +48,10 @@ namespace AlgoPractise
             // Singleton.Test();
 
 
-            ParanthesisStack.StackProcess();
+            //ParanthesisStack.StackProcess();
+
+            //SOLID ;
+            Demo.Main();
 
         }
     }

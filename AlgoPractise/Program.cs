@@ -8,6 +8,7 @@ using DP.Creational.Builder;
 using DP.Creational.Factory;
 using DP.Creational.Prototype;
 using DP.Creational.Singleton;
+using AlgoPractise._Design_Principles;
 
 namespace AlgoPractise
 {
@@ -51,7 +52,7 @@ namespace AlgoPractise
             //ParanthesisStack.StackProcess();
 
             //SOLID ;
-            Demo.Main();
+            Demo.Jain();
 
         }
     }

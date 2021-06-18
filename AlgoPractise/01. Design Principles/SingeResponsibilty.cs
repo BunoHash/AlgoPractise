@@ -31,7 +31,7 @@ namespace AlgoPractise._Design_Principles
     public static class Demo
     {
 
-        public static void Main()
+        public static void Jain()
         {
             var journal = new Journal();
             journal.AddEntry("today it's raining");

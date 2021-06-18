@@ -4,7 +4,7 @@ namespace AlgoPractise_Design_Principles
     {
         static public int Area(Rectangle r) => r.Width* r.Height;
 
-        static void Main()
+        static void Jain()
         {
             Rectangle rc = new Rectangle(2,3);
             System.Console.WriteLine($"area is : {Area(rc)}");

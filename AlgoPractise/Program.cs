@@ -1,14 +1,13 @@
 ﻿using System;
 using AlgoPractise_Design_Principles;
-using AlgoPractise.DataStructure;
 using AlgoPractise.NewFolder;
-using AlgoPractise.Searching;
-using AlgoPractise.SortAlgorithms;
+
 using DP.Creational.Builder;
 using DP.Creational.Factory;
 using DP.Creational.Prototype;
 using DP.Creational.Singleton;
 using AlgoPractise._Design_Principles;
+using AlgoPractise.Algorithm_DS;
 
 namespace AlgoPractise
 {
@@ -52,7 +51,10 @@ namespace AlgoPractise
             //ParanthesisStack.StackProcess();
 
             //SOLID ;
-            Demo.Jain();
+            //Demo.Jain();
+
+            //Misc
+            SpiralArrayTravarse.Process();
 
         }
     }

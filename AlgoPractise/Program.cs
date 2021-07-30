@@ -8,6 +8,7 @@ using DP.Creational.Prototype;
 using DP.Creational.Singleton;
 using AlgoPractise._Design_Principles;
 using AlgoPractise.Algorithm_DS;
+using AlgoPractise._02._DesignPatterns.Behavioural.Momento;
 
 namespace AlgoPractise
 {
@@ -54,7 +55,8 @@ namespace AlgoPractise
             //Demo.Jain();
 
             //Misc
-            SpiralArrayTravarse.Process();
+            //SpiralArrayTravarse.Process();
+            ProcessMomento.test();
 
         }
     }

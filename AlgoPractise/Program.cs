@@ -21,7 +21,8 @@ namespace AlgoPractise
     {
         static void Main(string[] args)
         {
-            MaxSumContiguousSubarray.FindMaxSum();
+            MaxDistance.FindDistancse();
+            //MaxSumContiguousSubarray.FindMaxSum();
             //SpiralMatrix.PrintSpiral();
             //SortedArrayDuplicate.Run();
             // SortItUp.Solve();
@@ -65,8 +66,8 @@ namespace AlgoPractise
             //SpiralArrayTravarse.Process();
             //ProcessMomento.test();
             //StatePattern.test();
-            var tx = "this is a text 4";
-            var path = "D:/SAYED_NEST/interview/doo.txt";
+            //var tx = "this is a text 4";
+            //var path = "D:/SAYED_NEST/interview/doo.txt";
             //File.Create(path);
 
             

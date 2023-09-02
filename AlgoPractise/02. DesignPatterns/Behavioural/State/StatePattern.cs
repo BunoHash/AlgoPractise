@@ -7,8 +7,6 @@ namespace AlgoPractise._02._DesignPatterns.Behavioural.State
     public class StatePattern
     {
 
-       
-
         public static void test()
         {
             var canvas = new Canvas();

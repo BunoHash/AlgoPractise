@@ -1,7 +1,8 @@
 
-AlgoPractise/obj/Debug/netcoreapp3.1/AlgoPractise.exe
-AlgoPractise/obj/Debug/netcoreapp3.1/AlgoPractise.dll
-AlgoPractise/obj/Debug/netcoreapp3.1/AlgoPractise.pdb
+
+AlgoPractise/bin/*
+AlgoPractise/obj/*
+.vs/*
 *.cache
 .vs/AlgoPractise/v16/.suo
 *.lock

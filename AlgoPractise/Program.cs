@@ -10,6 +10,9 @@ using AlgoPractise._Design_Principles;
 using AlgoPractise.Algorithm_DS;
 using AlgoPractise._02._DesignPatterns.Behavioural.Momento;
 using AlgoPractise._02._DesignPatterns.Behavioural.State;
+using System.IO;
+using AlgoPractise._04._AlgorithmDS.Sorting.Problems;
+using AlgoPractise._05._Problem_Solving;
 
 namespace AlgoPractise
 {
@@ -18,7 +21,10 @@ namespace AlgoPractise
     {
         static void Main(string[] args)
         {
-
+            MaxSumContiguousSubarray.FindMaxSum();
+            //SpiralMatrix.PrintSpiral();
+            //SortedArrayDuplicate.Run();
+            // SortItUp.Solve();
             // TestDelegate del = new TestDelegate();
             // del.Run();            
 
@@ -58,7 +64,17 @@ namespace AlgoPractise
             //Misc
             //SpiralArrayTravarse.Process();
             //ProcessMomento.test();
-            StatePattern.test();
+            //StatePattern.test();
+            var tx = "this is a text 4";
+            var path = "D:/SAYED_NEST/interview/doo.txt";
+            //File.Create(path);
+
+            
+            //var INFO = new FileInfo(path);
+            //var ykh = INFO.AppendText();
+            //ykh.WriteLine("new line 5");
+            //ykh.Close();
+
 
         }
     }

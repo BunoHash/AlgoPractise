@@ -19,7 +19,7 @@ namespace AlgoPractise.DataStructure
             for(int i=0;i<input.Length; i++)
             {
                 char item = input[i];
-                
+
                 if (item == '{' || item == '[' || item == '(')
                 {
                     myStack.Push(item);
@@ -29,16 +29,9 @@ namespace AlgoPractise.DataStructure
                     Console.WriteLine("NOT RIGHT FORMAT");
                     return;
                 }
-                else if (item == '}' && myStack.Pop() =='{') 
-                {
-                    
-                }
-                else if (item == ']' && myStack.Pop() == '[')
-                {
-                }
-                else if (item == ')' && myStack.Pop() == '(')
-                {
-                }
+                else if (item == '}' && myStack.Pop() == '{') continue;
+                else if (item == ']' && myStack.Pop() == '[') continue;
+                else if (item == ')' && myStack.Pop() == '(') continue;
                 else
                 {
                     Console.WriteLine("NOT RIGHT FORMAT");

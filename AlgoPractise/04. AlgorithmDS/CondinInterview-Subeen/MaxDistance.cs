@@ -33,10 +33,10 @@ namespace AlgoPractise._05._Problem_Solving
             for(int i=1;i<indexValuePair.Count; i++)
             {
                 var item = indexValuePair[i].Item2;
-                var lastItem = indexValuePair[i-1].Item2;
-                if (item >= lastItem)
+                var previousItem = indexValuePair[i-1].Item2;
+                if (item >= previousItem)
                 {
-                    currentDistance = item - lastItem + currentDistance;
+                    currentDistance = item - previousItem + currentDistance;
                     maxDistance = Math.Max(maxDistance, currentDistance);
                 }
                 else currentDistance = 0;
